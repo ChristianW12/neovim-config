@@ -34,6 +34,7 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.hlsearch = true
 opt.incsearch = true
+opt.path:append("**")  -- Projektübergreifende Suche mit :find
 
 -- =========================
 -- Files / Undo / Backup
