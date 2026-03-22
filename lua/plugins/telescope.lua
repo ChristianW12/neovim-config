@@ -14,10 +14,26 @@ return {
     
     telescope.setup({
       defaults = {
-        -- Hier könntest du Standard-Einstellungen anpassen
-        -- z.B. wie das Fenster aussieht
+        -- Verzeichnisse und Dateien, die du NIE sehen willst
+        file_ignore_patterns = {
+          "%.git[/\\]",      -- Ignoriert den .git Ordner (Windows & Linux)
+          "node_modules[/\\]",
+          "%.cache",
+          "dist[/\\]",
+          "build[/\\]",
+          "%.git$",          -- Ignoriert die .git Datei selbst
+        },
         layout_strategy = "horizontal",
         layout_config = { height = 0.95 },
+      },
+      pickers = {
+        find_files = {
+          -- Hier kannst du einstellen, ob versteckte Dateien (dotfiles) 
+          -- angezeigt werden sollen, aber ohne den .git Ordner
+          hidden = true,
+          -- Sorgt dafür, dass .gitignore trotzdem beachtet wird
+          no_ignore = false,
+        },
       },
     })
   end,
