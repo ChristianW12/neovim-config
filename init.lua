@@ -33,8 +33,14 @@ require("lazy").setup({
     -- Wir sagen lazy, dass er alle Dateien im Ordner 'lua/plugins/' laden soll.
     { import = "plugins" },
   },
-  -- Zeigt eine Benachrichtigung, wenn Plugins Updates haben.
-  checker = { enabled = true },
+  -- Deaktiviert die automatische Prüfung auf Updates beim Start
+  checker = { enabled = false },
+  -- Deaktiviert Benachrichtigungen bei Konfigurationsänderungen
+  change_detection = { notify = false },
+  -- Macht das UI von lazy etwas dezenter
+  ui = {
+    border = "rounded",
+  },
 })
 
 -- 4. CORE CONFIGURATION
