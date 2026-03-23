@@ -8,6 +8,18 @@ local map = vim.keymap.set
 map("n", "<leader>e", ":Ex<CR>", { desc = "Datei-Explorer öffnen", silent = true })
 
 -- =========================
+-- Buffer Navigation
+-- =========================
+-- Zum nächsten Buffer springen
+map("n", "L", ":bnext<CR>", { desc = "Nächster Buffer", silent = true })
+
+-- Zum vorherigen Buffer springen
+map("n", "H", ":bprevious<CR>", { desc = "Vorheriger Buffer", silent = true })
+
+-- Buffer schließen
+map("n", "<leader>x", ":bd<CR>", { desc = "Buffer schließen", silent = true })
+
+-- =========================
 -- Telescope Fuzzy Finder
 -- =========================
 -- Erfordert das Plugin 'telescope.nvim'

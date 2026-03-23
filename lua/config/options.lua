@@ -57,6 +57,16 @@ opt.mouse = "a"              -- Maus optional überall (Trackpad-User werden son
 opt.clipboard = "unnamedplus"
 
 -- =========================
+-- Folding (Einklappen)
+-- =========================
+opt.foldmethod = "expr"
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+opt.foldcolumn = "0"              -- Setze auf "1", wenn du links eine schmale Spalte für Folds sehen willst
+opt.foldlevel = 99               -- Dateien nicht eingeklappt öffnen
+opt.foldlevelstart = 99
+opt.foldenable = true            -- Folding generell erlauben
+
+-- =========================
 -- Nice-to-have, aber nicht crazy
 -- =========================
 opt.completeopt = { "menu", "menuone", "noselect" } -- später wichtig für Autocomplete-Plugins, schadet nie
