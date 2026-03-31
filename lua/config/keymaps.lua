@@ -36,3 +36,9 @@ map('n', '<leader>fb', builtin.buffers, { desc = "Geöffnete Buffer suchen" })
 
 -- [F]ind [H]elp - Suche in der Neovim-Hilfe
 map('n', '<leader>fh', builtin.help_tags, { desc = "Neovim Hilfe durchsuchen" })
+
+-- =========================
+-- Copilot Mappings
+-- =========================
+-- Einzelnes Wort akzeptieren
+map("i", "<C-l>", "<Plug>(copilot-accept-word)", { desc = "Copilot Wort akzeptieren", remap = true, silent = true })
