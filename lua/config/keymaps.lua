@@ -4,8 +4,8 @@ local map = vim.keymap.set
 -- =========================
 -- Allgemeine Mappings
 -- =========================
--- Explorer öffnen (Netrw)
-map("n", "<leader>e", ":Ex<CR>", { desc = "Datei-Explorer öffnen", silent = true })
+-- Explorer öffnen (Netrw) Zeitweise deaktiviert, da ich gerade neo-tree teste
+--map("n", "<leader>e", ":Ex<CR>", { desc = "Datei-Explorer öffnen", silent = true })
 
 -- =========================
 -- Buffer Navigation
