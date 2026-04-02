@@ -9,12 +9,14 @@ return {
   opts = {
     workspaces = {
       {
-        name = "personal",
-        path = "~/Documents/Obsidian", -- BITTE HIER DEINEN PFAD ANPASSEN
+        name = "vault",
+        path = function()
+          return vim.fn.getcwd() -- Nimmt den Ordner, in dem Neovim gestartet wurde
+        end,
       },
     },
     completion = {
-      nvim_cmp = true,
+      nvim_cmp = true, -- Wieder eingeschaltet!
       min_chars = 2,
     },
     notes_subdir = "notes",

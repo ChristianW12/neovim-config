@@ -23,9 +23,12 @@ return {
   -- 3. nvim-lspconfig (Modernisiert für Neovim 0.11+)
   {
     "neovim/nvim-lspconfig",
-    dependencies = { "williamboman/mason-lspconfig.nvim" },
+    dependencies = { "williamboman/mason-lspconfig.nvim", "hrsh7th/cmp-nvim-lsp" },
     config = function()
-      -- Zentraler Ort für Tastenkombinationen (moderner Autocmd-Ansatz)
+      -- Fähigkeiten (Capabilities) für CMP laden
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+      -- Zentraler Ort für Tastenkombinationen
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function(ev)
           local opts = { buffer = ev.buf, silent = true }

@@ -10,6 +10,7 @@ opt.relativenumber = true
 opt.cursorline = true
 opt.signcolumn = "yes"
 opt.wrap =  true 
+opt.conceallevel = 2 -- Obsidian UI (Checkboxen, Links) anzeigen
 
 -- Beim Scrollen immer etwas Kontext lassen
 opt.scrolloff = 8
