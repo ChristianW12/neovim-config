@@ -4,12 +4,6 @@ local map = vim.keymap.set
 -- =========================
 -- Allgemeine Mappings
 -- =========================
--- Explorer öffnen (Netrw) Zeitweise deaktiviert, da ich gerade neo-tree teste
---map("n", "<leader>e", ":Ex<CR>", { desc = "Datei-Explorer öffnen", silent = true })
-
--- =========================
--- Buffer Navigation
--- =========================
 -- Zum nächsten Buffer springen
 map("n", "L", ":bnext<CR>", { desc = "Nächster Buffer", silent = true })
 
@@ -20,25 +14,24 @@ map("n", "H", ":bprevious<CR>", { desc = "Vorheriger Buffer", silent = true })
 map("n", "<leader>x", ":bd<CR>", { desc = "Buffer schließen", silent = true })
 
 -- =========================
--- Telescope Fuzzy Finder
--- =========================
--- Erfordert das Plugin 'telescope.nvim'
-local builtin = require('telescope.builtin')
-
--- [F]ind [F]iles - Suche nach Dateinamen
-map('n', '<leader>ff', builtin.find_files, { desc = "Finde Dateien" })
-
--- [F]ind [G]rep - Suche nach Text innerhalb von Dateien
-map('n', '<leader>fg', builtin.live_grep, { desc = "Suche Text (Grep)" })
-
--- [F]ind [B]uffers - Suche in aktuell geöffneten Dateien
-map('n', '<leader>fb', builtin.buffers, { desc = "Geöffnete Buffer suchen" })
-
--- [F]ind [H]elp - Suche in der Neovim-Hilfe
-map('n', '<leader>fh', builtin.help_tags, { desc = "Neovim Hilfe durchsuchen" })
-
--- =========================
 -- Copilot Mappings
 -- =========================
 -- Einzelnes Wort akzeptieren
 map("i", "<C-l>", "<Plug>(copilot-accept-word)", { desc = "Copilot Wort akzeptieren", remap = true, silent = true })
+
+-- =========================
+-- Obsidian Mappings (Globale Triggers)
+-- =========================
+-- Diese Mappings starten das Obsidian-Plugin bei Bedarf (Lazy Loading)
+map("n", "<leader>os", "<cmd>ObsidianSearch<cr>", { desc = "Obsidian: Suche Text" })
+map("n", "<leader>oq", "<cmd>ObsidianQuickSwitch<cr>", { desc = "Obsidian: Schnellwechsel Notiz" })
+
+-- Erstellung und Verlinkung
+map("n", "<leader>on", "<cmd>ObsidianNew<cr>", { desc = "Obsidian: Neue Notiz" })
+map("v", "<leader>ol", "<cmd>ObsidianLink<cr>", { desc = "Obsidian: Link erstellen (Auswahl)" })
+map("v", "<leader>on", "<cmd>ObsidianNewFromLink<cr>", { desc = "Obsidian: Notiz aus Link erstellen" })
+
+-- Navigation und Daily Notes
+map("n", "<leader>od", "<cmd>ObsidianToday<cr>", { desc = "Obsidian: Heute (Daily Note)" })
+map("n", "<leader>ot", "<cmd>ObsidianTags<cr>", { desc = "Obsidian: Suche Tags" })
+map("n", "<leader>ob", "<cmd>ObsidianBacklinks<cr>", { desc = "Obsidian: Backlinks anzeigen" })

@@ -1,6 +1,14 @@
 return {
   -- Das Haupt-Plugin
   "nvim-telescope/telescope.nvim",
+
+  -- Keymaps für Lazy Loading (Plugin wird erst geladen, wenn eine dieser Tasten gedrückt wird)
+  keys = {
+    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Finde Dateien" },
+    { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Suche Text (Grep)" },
+    { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Geöffnete Buffer suchen" },
+    { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Neovim Hilfe durchsuchen" },
+  },
   
   -- Abhängigkeiten, die Telescope braucht, um zu funktionieren
   dependencies = { 

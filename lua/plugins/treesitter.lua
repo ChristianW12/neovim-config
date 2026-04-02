@@ -1,28 +1,26 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate", -- Aktualisiert die Parser automatisch
+    build = ":TSUpdate",
     config = function()
-      local treesitter = require("nvim-treesitter")
+      local ts = require("nvim-treesitter")
 
-      treesitter.setup({
-        -- Hier kannst du Sprachen eintragen, die immer installiert sein sollen
-        ensure_installed = { 
+      -- Compiler-Einstellungen für Windows + GCC
+      local install = require("nvim-treesitter.install")
+      install.prefer_git = true
+      install.compilers = { "gcc" }
+
+      -- Neues Setup (v0.12+ / Main Branch Rewrite)
+      ts.setup({
+        -- Parser-Liste (neue Syntax)
+        install = { 
           "c", "lua", "vim", "vimdoc", "query", 
-          "python", "javascript", "typescript", "bash", "html", "css" 
+          "python", "javascript", "typescript", "bash", "html", "css",
+          "markdown", "markdown_inline" 
         },
-        
-        -- Installiert fehlende Parser automatisch, wenn du eine neue Datei öffnest
-        auto_install = true,
-
-        highlight = {
-          enable = true, -- Das ist das wichtigste: Schaltet das moderne Highlighting ein
-          additional_vim_regex_highlighting = false,
-        },
-        
-        indent = {
-          enable = true, -- Besseres automatisches Einrücken
-        },
+        -- Highlighting aktivieren
+        highlight = { enable = true },
+        indent = { enable = true },
       })
     end,
   },
