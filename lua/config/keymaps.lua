@@ -14,12 +14,6 @@ map("n", "H", ":bprevious<CR>", { desc = "Vorheriger Buffer", silent = true })
 map("n", "<leader>x", ":bd<CR>", { desc = "Buffer schließen", silent = true })
 
 -- =========================
--- Copilot Mappings
--- =========================
--- Einzelnes Wort akzeptieren
-map("i", "<C-l>", "<Plug>(copilot-accept-word)", { desc = "Copilot Wort akzeptieren", remap = true, silent = true })
-
--- =========================
 -- Obsidian Mappings (Globale Triggers)
 -- =========================
 -- Diese Mappings starten das Obsidian-Plugin bei Bedarf (Lazy Loading)
