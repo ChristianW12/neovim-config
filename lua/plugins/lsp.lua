@@ -1,5 +1,5 @@
 return {
-  -- 1. Mason zum Installieren der LSP-Server
+  -- 1. Mason to install LSP servers
   {
     "williamboman/mason.nvim",
     config = function()
@@ -20,15 +20,15 @@ return {
     end,
   },
 
-  -- 3. nvim-lspconfig (Modernisiert für Neovim 0.11+)
+  -- 3. nvim-lspconfig (Modernized for Neovim 0.11+)
   {
     "neovim/nvim-lspconfig",
     dependencies = { "williamboman/mason-lspconfig.nvim", "hrsh7th/cmp-nvim-lsp" },
     config = function()
-      -- Fähigkeiten (Capabilities) für CMP laden
+      -- Load capabilities for CMP
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      -- Zentraler Ort für Tastenkombinationen
+      -- Central location for keybindings
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function(ev)
           local opts = { buffer = ev.buf, silent = true }
@@ -42,8 +42,8 @@ return {
         end,
       })
 
-      -- Konfiguration für den Lua-Server über die neue API
-      -- Wir nutzen vim.lsp.config statt require('lspconfig').lua_ls.setup
+      -- Configuration for the Lua server via the new API
+      -- We use vim.lsp.config instead of require('lspconfig').lua_ls.setup
       vim.lsp.config("lua_ls", {
         settings = {
           Lua = {
@@ -58,10 +58,10 @@ return {
         },
       })
 
-      -- Aktiviere den Server
+      -- Enable the server
       vim.lsp.enable("lua_ls")
 
-      -- Falls du weitere Server installierst (z.B. pyright), einfach hier aktivieren:
+      -- If you install other servers (e.g. pyright), simply enable them here:
       -- vim.lsp.enable("pyright")
     end,
   },

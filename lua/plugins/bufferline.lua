@@ -5,15 +5,15 @@ return {
   config = function()
     require("bufferline").setup({
       options = {
-        mode = "buffers", -- Zeigt offene Dateien (Buffer)
-        separator_style = "slant", -- Schräge Trenner für eine moderne Optik
+        mode = "buffers", -- Shows open files (buffers)
+        separator_style = "slant", -- Slanted separators for a modern look
         always_show_bufferline = true,
         show_buffer_close_icons = true,
         show_close_icon = true,
-        diagnostics = "nvim_lsp", -- Zeigt LSP-Fehler direkt in den Tabs an
+        diagnostics = "nvim_lsp", -- Shows LSP errors directly in the tabs
         offsets = {
           {
-            filetype = "neo-tree", -- Platzhalter für den File-Explorer (falls installiert)
+            filetype = "neo-tree", -- Placeholder for the file explorer (if installed)
             text = "File Explorer",
             text_align = "left",
             separator = true,
@@ -22,10 +22,10 @@ return {
       },
     })
 
-    -- Keymaps zum schnellen Wechseln zwischen Buffers
-    vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Nächster Buffer" })
-    vim.keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Vorheriger Buffer" })
-    vim.keymap.set("n", "<leader>bp", "<cmd>BufferLinePick<cr>", { desc = "Buffer auswählen" })
-    vim.keymap.set("n", "<leader>bc", "<cmd>BufferLinePickClose<cr>", { desc = "Buffer zum Schließen auswählen" })
+    -- Keymaps for quickly switching between buffers
+    vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+    vim.keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous buffer" })
+    vim.keymap.set("n", "<leader>bp", "<cmd>BufferLinePick<cr>", { desc = "Select buffer" })
+    vim.keymap.set("n", "<leader>bc", "<cmd>BufferLinePickClose<cr>", { desc = "Select buffer to close" })
   end,
 }

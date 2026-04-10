@@ -2,29 +2,29 @@
 local map = vim.keymap.set
 
 -- =========================
--- Allgemeine Mappings
+-- General mappings
 -- =========================
--- Zum nächsten Buffer springen
-map("n", "L", ":bnext<CR>", { desc = "Nächster Buffer", silent = true })
--- Zum vorherigen Buffer springen
-map("n", "H", ":bprevious<CR>", { desc = "Vorheriger Buffer", silent = true })
--- Buffer schließen
-map("n", "<leader>x", ":bd<CR>", { desc = "Buffer schließen", silent = true })
+-- Jump to next buffer
+map("n", "L", ":bnext<CR>", { desc = "Next buffer", silent = true })
+-- Jump to previous buffer
+map("n", "H", ":bprevious<CR>", { desc = "Previous buffer", silent = true })
+-- Close buffer
+map("n", "<leader>x", ":bd<CR>", { desc = "Close buffer", silent = true })
 
--- Highlights nach suche entfernen
-map("n", "<leader>nh", ":nohl<CR>", { desc = "Suche-Highlight entfernen", silent = true })
+-- Remove search highlights
+map("n", "<leader>nh", ":nohl<CR>", { desc = "Remove search highlight", silent = true })
 
 -- =========================
--- Obsidian Mappings (Globale Triggers)
+-- Obsidian Mappings (Global triggers)
 -- =========================
--- Diese Mappings starten das Obsidian-Plugin bei Bedarf (Lazy Loading)
-map("n", "<leader>os", "<cmd>ObsidianSearch<cr>", { desc = "Obsidian: Suche Text" })
-map("n", "<leader>oq", "<cmd>ObsidianQuickSwitch<cr>", { desc = "Obsidian: Schnellwechsel Notiz" })
--- Erstellung und Verlinkung
-map("n", "<leader>on", "<cmd>ObsidianNew<cr>", { desc = "Obsidian: Neue Notiz" })
-map("v", "<leader>ol", "<cmd>ObsidianLink<cr>", { desc = "Obsidian: Link erstellen (Auswahl)" })
-map("v", "<leader>on", "<cmd>ObsidianNewFromLink<cr>", { desc = "Obsidian: Notiz aus Link erstellen" })
--- Navigation und Daily Notes
-map("n", "<leader>od", "<cmd>ObsidianToday<cr>", { desc = "Obsidian: Heute (Daily Note)" })
-map("n", "<leader>ot", "<cmd>ObsidianTags<cr>", { desc = "Obsidian: Suche Tags" })
-map("n", "<leader>ob", "<cmd>ObsidianBacklinks<cr>", { desc = "Obsidian: Backlinks anzeigen" })
+-- These mappings start the Obsidian plugin on demand (lazy loading)
+map("n", "<leader>os", "<cmd>ObsidianSearch<cr>", { desc = "Obsidian: Search text" })
+map("n", "<leader>oq", "<cmd>ObsidianQuickSwitch<cr>", { desc = "Obsidian: Quick switch note" })
+-- Creation and linking
+map("n", "<leader>on", "<cmd>ObsidianNew<cr>", { desc = "Obsidian: New note" })
+map("v", "<leader>ol", "<cmd>ObsidianLink<cr>", { desc = "Obsidian: Create link (selection)" })
+map("v", "<leader>on", "<cmd>ObsidianNewFromLink<cr>", { desc = "Obsidian: Create note from link" })
+-- Navigation and daily notes
+map("n", "<leader>od", "<cmd>ObsidianToday<cr>", { desc = "Obsidian: Today (daily note)" })
+map("n", "<leader>ot", "<cmd>ObsidianTags<cr>", { desc = "Obsidian: Search tags" })
+map("n", "<leader>ob", "<cmd>ObsidianBacklinks<cr>", { desc = "Obsidian: Show backlinks" })

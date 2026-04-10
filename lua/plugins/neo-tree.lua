@@ -3,29 +3,29 @@ return {
   branch = "v3.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons", -- Symbole für Dateitypen
+    "nvim-tree/nvim-web-devicons", -- Icons for file types
     "MunifTanjim/nui.nvim",
   },
   config = function()
     require("neo-tree").setup({
       window = {
-        width = 30, -- Breite der Sidebar
+        width = 30, -- Width of the sidebar
         mappings = {
-          ["<space>"] = "none", -- Leader-Taste im Baum deaktivieren
+          ["<space>"] = "none", -- Disable leader key in the tree
         },
       },
       filesystem = {
         filtered_items = {
-          visible = true, -- Versteckte Dateien (z.B. .git) anzeigen
+          visible = true, -- Show hidden files (e.g. .git)
         },
         follow_current_file = {
-          enabled = true, -- Den Explorer immer dort öffnen, wo man gerade arbeitet
+          enabled = true, -- Always open the explorer where you are currently working
         },
       },
     })
 
-    -- Keymaps zum Ein-/Ausblenden
-    vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Explorer ein-/ausblenden" })
-    vim.keymap.set("n", "<leader>fe", "<cmd>Neotree focus<cr>", { desc = "Fokus auf Explorer" })
+    -- Keymaps for toggling
+    vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle Explorer" })
+    vim.keymap.set("n", "<leader>fe", "<cmd>Neotree focus<cr>", { desc = "Focus on Explorer" })
   end,
 }

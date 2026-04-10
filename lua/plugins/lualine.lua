@@ -4,10 +4,10 @@ return {
   config = function()
     require("lualine").setup({
       options = {
-        theme = "auto", -- Erkennt automatisch dein Farbschema (z.B. Catppuccin)
+        theme = "auto", -- Automatically detects your color scheme (e.g. Catppuccin)
         component_separators = { left = "│", right = "│" },
         section_separators = { left = "", right = "" },
-        globalstatus = true, -- Eine durchgehende Statuszeile für alle Fenster
+        globalstatus = true, -- A single statusline for all windows
       },
       sections = {
         lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },

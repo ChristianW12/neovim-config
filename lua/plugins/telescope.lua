@@ -1,45 +1,45 @@
 return {
-  -- Das Haupt-Plugin
+  -- The main plugin
   "nvim-telescope/telescope.nvim",
 
-  -- Keymaps für Lazy Loading (Plugin wird erst geladen, wenn eine dieser Tasten gedrückt wird)
+  -- Keymaps for lazy loading (plugin is only loaded when one of these keys is pressed)
   keys = {
-    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Finde Dateien" },
-    { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Suche Text (Grep)" },
-    { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Geöffnete Buffer suchen" },
-    { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Neovim Hilfe durchsuchen" },
+    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+    { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Search Text (Grep)" },
+    { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Search Open Buffers" },
+    { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Search Neovim Help" },
   },
   
-  -- Abhängigkeiten, die Telescope braucht, um zu funktionieren
+  -- Dependencies that Telescope needs to function
   dependencies = { 
     "nvim-lua/plenary.nvim",
-    { "nvim-tree/nvim-web-devicons", enabled = true }, -- Für schöne Datei-Icons
+    { "nvim-tree/nvim-web-devicons", enabled = true }, -- For nice file icons
   },
 
-  -- Die Konfiguration des Plugins
+  -- The plugin configuration
   config = function()
     local telescope = require("telescope")
     
     telescope.setup({
       defaults = {
-        -- Verzeichnisse und Dateien, die du NIE sehen willst
+        -- Directories and files that you NEVER want to see
         file_ignore_patterns = {
-          "%.git[/\\]",      -- Ignoriert den .git Ordner (Windows & Linux)
+          "%.git[/\\]",      -- Ignores the .git folder (Windows & Linux)
           "node_modules[/\\]",
           "%.cache",
           "dist[/\\]",
           "build[/\\]",
-          "%.git$",          -- Ignoriert die .git Datei selbst
+          "%.git$",          -- Ignores the .git file itself
         },
         layout_strategy = "horizontal",
         layout_config = { height = 0.95 },
       },
       pickers = {
         find_files = {
-          -- Hier kannst du einstellen, ob versteckte Dateien (dotfiles) 
-          -- angezeigt werden sollen, aber ohne den .git Ordner
+          -- Here you can set whether hidden files (dotfiles) 
+          -- should be displayed, but without the .git folder
           hidden = true,
-          -- Sorgt dafür, dass .gitignore trotzdem beachtet wird
+          -- Ensures that .gitignore is still respected
           no_ignore = false,
         },
       },

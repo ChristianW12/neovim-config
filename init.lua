@@ -1,49 +1,49 @@
 -- init.lua
 
 -- 1. LEADER KEYS
--- Diese müssen ganz oben stehen, damit Plugins sie beim Laden sofort kennen.
+-- These must be at the very top so plugins know them immediately when loading.
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- 2. BOOTSTRAP LAZY.NVIM
--- Dieser Block sorgt dafür, dass Neovim den Plugin-Manager selbst herunterlädt, 
--- falls er auf deinem System noch nicht existiert.
+-- This block ensures that Neovim downloads the plugin manager itself
+-- if it doesn't already exist on your system.
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
   local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
-      { "Fehler beim Klonen von lazy.nvim:\n", "ErrorMsg" },
+      { "Error cloning lazy.nvim:\n", "ErrorMsg" },
       { out, "WarningMsg" },
-      { "\nDrücke eine beliebige Taste zum Beenden...", "None" },
+      { "\nPress any key to exit...", "None" },
     }, true, {})
     vim.fn.getchar()
     os.exit(1)
   end
 end
 
--- Füge den Pfad von lazy.nvim zum internen Suchpfad (runtimepath) hinzu.
+-- Add the path of lazy.nvim to the internal search path (runtimepath).
 vim.opt.rtp:prepend(lazypath)
 
 -- 3. SETUP LAZY.NVIM
--- Hier konfigurieren wir den Manager und sagen ihm, wo er Plugins suchen soll.
+-- Here we configure the manager and tell it where to look for plugins.
 require("lazy").setup({
   spec = {
-    -- Wir sagen lazy, dass er alle Dateien im Ordner 'lua/plugins/' laden soll.
+    -- We tell lazy to load all files in the 'lua/plugins/' folder.
     { import = "plugins" },
   },
-  -- Deaktiviert die automatische Prüfung auf Updates beim Start
+  -- Disables automatic check for updates on startup
   checker = { enabled = false },
-  -- Deaktiviert Benachrichtigungen bei Konfigurationsänderungen
+  -- Disables notifications on configuration changes
   change_detection = { notify = false },
-  -- Macht das UI von lazy etwas dezenter
+  -- Makes the lazy UI a bit more subtle
   ui = {
     border = "rounded",
   },
 })
 
 -- 4. CORE CONFIGURATION
--- Erst wenn der Plugin-Manager bereit ist, laden wir deine eigenen Einstellungen.
+-- Only when the plugin manager is ready do we load your own settings.
 require("config.options")
 require("config.keymaps")

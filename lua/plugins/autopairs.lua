@@ -6,8 +6,8 @@ return {
       check_ts = true,
     })
 
-    -- Integration mit nvim-cmp
-    -- Fügt automatisch Klammern hinzu, wenn eine Funktion im Menü bestätigt wird
+    -- Integration with nvim-cmp
+    -- Automatically adds brackets when a function is confirmed in the menu
     local cmp_autopairs = require("nvim-autopairs.completion.cmp")
     local cmp = require("cmp")
     cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())

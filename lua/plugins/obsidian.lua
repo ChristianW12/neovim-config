@@ -11,16 +11,17 @@ return {
       {
         name = "vault",
         path = function()
-          return vim.fn.getcwd() -- Nimmt den Ordner, in dem Neovim gestartet wurde
+          return vim.fn.getcwd() -- Uses the folder where Neovim was started
         end,
       },
     },
     completion = {
-      nvim_cmp = true, -- Wieder eingeschaltet!
+      nvim_cmp = true, -- Switched back on!
       min_chars = 2,
     },
     notes_subdir = "notes",
     new_notes_location = "notes_subdir",
+    disable_frontmatter = true, -- Disables the automatic creation of metadata at the top of the file
     mappings = {
       ["gf"] = {
         action = function()

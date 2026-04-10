@@ -10,13 +10,13 @@ opt.relativenumber = true
 opt.cursorline = true
 opt.signcolumn = "yes"
 opt.wrap =  true 
-opt.conceallevel = 2 -- Obsidian UI (Checkboxen, Links) anzeigen
+opt.conceallevel = 2 -- Show Obsidian UI (checkboxes, links)
 
--- Beim Scrollen immer etwas Kontext lassen
+-- Keep some context when scrolling
 opt.scrolloff = 8
 opt.sidescrolloff = 8
 
--- Splits: neue Fenster dort, wo man sie erwartet
+-- Splits: new windows where you expect them
 opt.splitright = true
 opt.splitbelow = true
 
@@ -35,7 +35,7 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.hlsearch = true
 opt.incsearch = true
-opt.path:append("**")  -- Projektübergreifende Suche mit :find
+opt.path:append("**")  -- Cross-project search with :find
 
 -- =========================
 -- Files / Undo / Backup
@@ -48,9 +48,9 @@ opt.writebackup = false
 -- =========================
 -- Performance / Behavior
 -- =========================
-opt.updatetime = 300          -- schneller für CursorHold (später nützlich für LSP, GitSigns etc.)
-opt.timeoutlen = 400         -- snappier bei Leader-Mappings
-opt.mouse = "a"              -- Maus optional überall (Trackpad-User werden sonst komisch)
+opt.updatetime = 300          -- faster for CursorHold (useful later for LSP, GitSigns, etc.)
+opt.timeoutlen = 400         -- snappier for leader mappings
+opt.mouse = "a"              -- Mouse optional everywhere (trackpad users would otherwise be weird)
 
 -- =========================
 -- Clipboard (Linux)
@@ -58,16 +58,16 @@ opt.mouse = "a"              -- Maus optional überall (Trackpad-User werden son
 opt.clipboard = "unnamedplus"
 
 -- =========================
--- Folding (Einklappen)
+-- Folding
 -- =========================
 opt.foldmethod = "expr"
 opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-opt.foldcolumn = "0"              -- Setze auf "1", wenn du links eine schmale Spalte für Folds sehen willst
-opt.foldlevel = 99               -- Dateien nicht eingeklappt öffnen
+opt.foldcolumn = "0"              -- Set to "1" if you want to see a narrow column for folds on the left
+opt.foldlevel = 99               -- Open files without being folded
 opt.foldlevelstart = 99
-opt.foldenable = true            -- Folding generell erlauben
+opt.foldenable = true            -- Generally allow folding
 
 -- =========================
--- Nice-to-have, aber nicht crazy
+-- Nice-to-have, but not crazy
 -- =========================
-opt.completeopt = { "menu", "menuone", "noselect" } -- später wichtig für Autocomplete-Plugins, schadet nie
+opt.completeopt = { "menu", "menuone", "noselect" } -- important later for autocomplete plugins, never hurts

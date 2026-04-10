@@ -1,19 +1,19 @@
 return {
   "catppuccin/nvim",
   name = "catppuccin",
-  priority = 1000, -- Stellt sicher, dass das Theme vor allen anderen Plugins geladen wird
+  priority = 1000, -- Ensures the theme is loaded before all other plugins
   config = function()
-    -- Hier wird das Theme konfiguriert
+    -- Theme configuration
     require("catppuccin").setup({
-      flavour = "mocha", -- Optionen: latte, frappe, macchiato, mocha
+      flavour = "mocha", -- Options: latte, frappe, macchiato, mocha
       transparent_background = false,
       term_colors = true,
       integrations = {
-        cmp = true,      -- Unterstützt Autocompletion-Farben
-        gitsigns = true, -- Falls du Git-Plugins nutzt
+        cmp = true,      -- Supports autocompletion colors
+        gitsigns = true, -- If you use git plugins
         nvimtree = true,
         telescope = {
-          enabled = true, -- Macht den Fuzzy Finder schöner
+          enabled = true, -- Makes the fuzzy finder look better
         },
         notify = true,
         mini = {
@@ -23,7 +23,7 @@ return {
       },
     })
 
-    -- Dies ist der eigentliche Befehl, der das Theme aktiviert
+    -- The command that activates the theme
     vim.cmd.colorscheme("catppuccin")
   end,
 }
