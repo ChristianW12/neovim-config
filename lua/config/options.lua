@@ -58,14 +58,22 @@ opt.mouse = "a"              -- Mouse optional everywhere (trackpad users would 
 opt.clipboard = "unnamedplus"
 
 -- =========================
--- Folding
+-- Folding (UFO modern style)
 -- =========================
-opt.foldmethod = "expr"
-opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-opt.foldcolumn = "0"              -- Set to "1" if you want to see a narrow column for folds on the left
-opt.foldlevel = 99               -- Open files without being folded
+opt.foldcolumn = "1"
+opt.foldlevel = 99
 opt.foldlevelstart = 99
-opt.foldenable = true            -- Generally allow folding
+opt.foldenable = true
+
+-- UFO needs these settings to work properly
+opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+
+-- Refresh folds when loading a buffer
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
+  callback = function()
+    vim.cmd("normal! zx")
+  end,
+})
 
 -- =========================
 -- Nice-to-have, but not crazy
