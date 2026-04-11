@@ -4,10 +4,10 @@ return {
 
   -- Keymaps for lazy loading (plugin is only loaded when one of these keys is pressed)
   keys = {
-    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-    { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Search Text (Grep)" },
-    { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Search Open Buffers" },
-    { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Search Neovim Help" },
+    { "ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+    { "fg", "<cmd>Telescope live_grep<cr>", desc = "Search Text (Grep)" },
+    { "fb", "<cmd>Telescope buffers<cr>", desc = "Search Open Buffers" },
+    { "fh", "<cmd>Telescope help_tags<cr>", desc = "Search Neovim Help" },
   },
   
   -- Dependencies that Telescope needs to function
