@@ -17,6 +17,9 @@ map("n", "<leader>nh", ":nohl<CR>", { desc = "Remove search highlight", silent =
 -- Saving file
 map("n", "<leader>w", ":w<CR>", { desc = "Save file", silent = true })
 
+-- Closing Neovim (with confirmation if there are unsaved changes)
+map("n", "<C-q>", ":confirm q<CR>", { desc = "Quit Neovim", silent = true })
+
 -- =========================
 -- Obsidian Mappings (Global triggers)
 -- =========================
