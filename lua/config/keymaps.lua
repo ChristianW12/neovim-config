@@ -12,7 +12,7 @@ map("n", "H", ":bprevious<CR>", { desc = "Previous buffer", silent = true })
 map("n", "<leader>x", ":bd<CR>", { desc = "Close buffer", silent = true })
 
 -- Remove search highlights
-map("n", "nh", ":nohl<CR>", { desc = "Remove search highlight", silent = true })
+map("n", "<leader>nh", ":nohl<CR>", { desc = "Remove search highlight", silent = true })
 
 -- Saving file
 map("n", "<leader>w", ":w<CR>", { desc = "Save file", silent = true })
