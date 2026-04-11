@@ -5,6 +5,11 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- WINDOWS FIX: Ensure GCC is preferred over cl.exe
+if vim.fn.has("win32") == 1 then
+  vim.env.CC = "gcc"
+end
+
 -- 2. BOOTSTRAP LAZY.NVIM
 -- This block ensures that Neovim downloads the plugin manager itself
 -- if it doesn't already exist on your system.
