@@ -21,7 +21,7 @@ map("n", "<leader>w", ":w<CR>", { desc = "Save file", silent = true })
 map("n", "<C-q>", ":confirm q<CR>", { desc = "Quit Neovim", silent = true })
 
 -- Force Closing Neovim (without confirmation)
-map("n", "<C-Q>", ":q!<CR>", { desc = "Force quit Neovim", silent = true })
+map("n", "<C-Q>", ":qall!<CR>", { desc = "Force quit Neovim", silent = true })
 
 -- =========================
 -- Obsidian Mappings (Global triggers)
