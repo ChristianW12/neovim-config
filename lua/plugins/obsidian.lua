@@ -19,7 +19,7 @@ return {
       nvim_cmp = true, -- Switched back on!
       min_chars = 2,
     },
-    notes_subdir = "notes",
+    notes_subdir = "",
     new_notes_location = "notes_subdir",
     disable_frontmatter = true, -- Disables the automatic creation of metadata at the top of the file
     mappings = {
