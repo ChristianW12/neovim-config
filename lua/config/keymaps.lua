@@ -23,6 +23,14 @@ map("n", "<C-q>", ":confirm q<CR>", { desc = "Quit Neovim", silent = true })
 -- Force Closing Neovim (without confirmation)
 map("n", "<C-Q>", ":qall!<CR>", { desc = "Force quit Neovim", silent = true })
 
+-- Normal Mode: move single line up/down 
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { desc = 'Zeile nach unten' })
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { desc = 'Zeile nach oben' })
+
+-- Visual Mode: move selected lines up/down 
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Bereich nach unten' })
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Bereich nach oben' })
+
 -- =========================
 -- Obsidian Mappings (Global triggers)
 -- =========================
