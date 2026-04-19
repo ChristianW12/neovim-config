@@ -38,7 +38,7 @@ return {
         opts = { buffer = true },
       },
       -- Toggle checkbox (Obsidian style)
-      ["<C-c>"] = {
+      ["<C-g>"] = {
         action = function()
           return require("obsidian").util.toggle_checkbox()
         end,
@@ -63,7 +63,7 @@ return {
     -- Underline/Italic: ____ (cursor in the middle)
     vim.keymap.set("i", "<C-u>", "____<Left><Left>", { desc = "Markdown: Underline/Italic", buffer = true })
     -- Toggle/Create checkbox in Insert Mode
-    vim.keymap.set("i", "<C-c>", function()
+    vim.keymap.set("i", "<C-g>", function()
       require("obsidian").util.toggle_checkbox()
     end, { desc = "Markdown: Toggle Checkbox", buffer = true })
   end,
