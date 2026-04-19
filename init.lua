@@ -37,6 +37,7 @@ require("lazy").setup({
   spec = {
     -- We tell lazy to load all files in the 'lua/plugins/' folder.
     { import = "plugins" },
+    {import = "plugins.themes"},
   },
   -- Disables automatic check for updates on startup
   checker = { enabled = false },
