@@ -78,7 +78,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
 -- =========================
 -- Colorscheme
 -- =========================
-vim.cmd.colorscheme("catppuccin") -- setting a colorscheme
+vim.cmd.colorscheme("vscode") -- setting a colorscheme
 
 -- =========================
 -- Nice-to-have, but not crazy
