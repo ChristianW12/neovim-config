@@ -76,6 +76,11 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
 })
 
 -- =========================
+-- Colorscheme
+-- =========================
+vim.cmd.colorscheme("default") -- Hier dein gewünschtes Theme eintragen
+
+-- =========================
 -- Nice-to-have, but not crazy
 -- =========================
 opt.completeopt = { "menu", "menuone", "noselect" } -- important later for autocomplete plugins, never hurts
