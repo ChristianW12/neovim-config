@@ -5,10 +5,10 @@ return {
     config = function()
       local ts = require("nvim-treesitter")
 
-      -- Compiler settings for Windows (Zwinge GCC)
+      -- Compiler settings for Windows (Force GCC)
       local install = require("nvim-treesitter.install")
       install.prefer_git = true
-      install.compilers = { "gcc" } -- Nur GCC erlauben
+      install.compilers = { "gcc" } -- Only allow GCC
 
       ts.setup({
         -- Parser list
@@ -17,7 +17,7 @@ return {
           "python", "javascript", "typescript", "bash", "html", "css",
           "markdown", "markdown_inline" 
         },
-        -- Sync_install auf false setzen, damit Neovim nicht beim Starten blockiert
+        -- Set sync_install to false so Neovim doesn't block on startup
         sync_install = false,
         auto_install = true,
         highlight = { enable = true },
