@@ -22,8 +22,5 @@ return {
         },
       },
     })
-
-    -- The command that activates the theme
-    vim.cmd.colorscheme("catppuccin")
   end,
 }
