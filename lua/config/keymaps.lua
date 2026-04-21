@@ -23,6 +23,13 @@ map("n", "<C-q>", ":confirm q<CR>", { desc = "Quit Neovim", silent = true })
 -- Force Closing Neovim (without confirmation)
 map("n", "<C-Q>", ":qall!<CR>", { desc = "Force quit Neovim", silent = true })
 
+-- Saving current colorscheme name in clipboard 
+vim.keymap.set('n', '<leader>cth', function()
+    local name = vim.g.colors_name or vim.cmd('colorscheme')
+    vim.fn.setreg('+', name)
+    print("Theme '" .. name .. "' copied to clipboard!")
+end, { desc = 'Copy current colorscheme name to clipboard' })
+
 -- Normal Mode: move single line up/down 
 vim.keymap.set('n', '<A-j>', ':m .+1<CR>', { desc = 'line up' })
 vim.keymap.set('n', '<A-k>', ':m .-2<CR>', { desc = 'line down' })
