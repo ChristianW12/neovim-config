@@ -1,5 +1,4 @@
 -- init.lua
-
 -- 1. LEADER KEYS
 -- These must be at the very top so plugins know them immediately when loading.
 vim.g.mapleader = " "
