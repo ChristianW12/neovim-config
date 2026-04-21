@@ -4,19 +4,27 @@
 This repository contains my personal Neovim configuration. It is designed to enhance my productivity and provide a customized editing experience. The configuration includes various plugins, key mappings, and settings tailored to my workflow.
 
 ## Installed Plugins
-- tree-sitter
+- nvim-treesitter
 - nvim-cmp
-- lspconfig
-- telescope
-- gitsigns
-- copilot
-- lualine
-- which-key
-- neo-tree
-- mason
-- bufferline
+- nvim-lspconfig
+- telescope.nvim
+- gitsigns.nvim
+- copilot.lua
+- lualine.nvim
+- which-key.nvim
+- neo-tree.nvim
+- mason.nvim
+- mason-lspconfig.nvim
+- bufferline.nvim
+- nvim-autopairs
+- nvim-ufo
+
+### Themes
+- catppuccin
+- gruvbox-material
+- vscode.nvim
 
 additional plugins for my workflow at university:
 - vimtex
-- obsidian
+- obsidian.nvim
 

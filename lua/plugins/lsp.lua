@@ -17,8 +17,8 @@ return {
             require("mason-lspconfig").setup({
                 ensure_installed = {
                     "vtsls",
-                    "css-lsp",
-                    "html-lsp",
+                    "angularls",
+                    "lua_ls",
                     "jdtls",
                     "clangd",
                     "pyright"
