@@ -18,10 +18,10 @@ map("n", "<leader>nh", ":nohl<CR>", { desc = "Remove search highlight", silent =
 map("n", "<leader>w", ":w<CR>", { desc = "Save file", silent = true })
 
 -- Closing Neovim (with confirmation if there are unsaved changes)
-map("n", "<C-q>", ":confirm q<CR>", { desc = "Quit Neovim", silent = true })
+map("n", "<leader>q", ":confirm q<CR>", { desc = "Quit Neovim", silent = true })
 
 -- Force Closing Neovim (without confirmation)
-map("n", "<C-Q>", ":qall!<CR>", { desc = "Force quit Neovim", silent = true })
+map("n", "<leader>Q", ":qall!<CR>", { desc = "Force quit Neovim", silent = true })
 
 -- Saving current colorscheme name in clipboard 
 vim.keymap.set('n', '<leader>cth', function()
