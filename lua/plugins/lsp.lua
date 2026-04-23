@@ -17,6 +17,7 @@ return {
             require("mason-lspconfig").setup({
                 ensure_installed = {
                     "vtsls",
+                    "texlab",
                     "angularls",
                     "lua_ls",
                     "jdtls",
