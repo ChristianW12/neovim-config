@@ -5,7 +5,8 @@ local servers = {
     "lua_ls",
     "jdtls",
     "clangd",
-    "pyright"
+    "pyright",
+    "sqlls",
 }
 
 return {

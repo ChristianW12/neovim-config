@@ -17,7 +17,7 @@ return {
       end, 
       desc = "Find Config Files" 
     },
-    { "<leader>th", "<cmd>Telescope colorscheme enable_preview=true<cr>", desc = "Colorscheme Preview" },
+    { "<leader>TH", "<cmd>Telescope colorscheme enable_preview=true<cr>", desc = "Colorscheme Preview" },
   },
   
   -- Dependencies that Telescope needs to function
