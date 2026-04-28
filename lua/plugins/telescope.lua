@@ -8,7 +8,7 @@ return {
     { "fg", "<cmd>Telescope live_grep<cr>", desc = "Search Text (Grep)" },
     { "fb", "<cmd>Telescope buffers<cr>", desc = "Search Open Buffers" },
     { "fh", "<cmd>Telescope help_tags<cr>", desc = "Search Neovim Help" },
-    { "<leader>th", "<cmd>Telescope colorscheme enable_preview=true<cr>", desc = "Colorscheme Preview" },
+    { "<leader>TH", "<cmd>Telescope colorscheme enable_preview=true<cr>", desc = "Colorscheme Preview" },
   },
   
   -- Dependencies that Telescope needs to function
