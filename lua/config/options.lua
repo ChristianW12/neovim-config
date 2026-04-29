@@ -15,6 +15,7 @@ opt.relativenumber = true
 opt.cursorline = true
 opt.signcolumn = "yes"
 opt.wrap =  true 
+opt.linebreak = true
 opt.conceallevel = 2 -- Show Obsidian UI (checkboxes, links)
 
 -- Keep some context when scrolling
