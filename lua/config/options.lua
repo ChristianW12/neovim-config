@@ -2,6 +2,11 @@
 local opt = vim.opt
 
 -- =========================
+-- Colorscheme
+-- =========================
+vim.cmd.colorscheme("catppuccin-nvim") -- setting a colorscheme
+
+-- =========================
 -- Basics / UI
 -- =========================
 opt.termguicolors = true
@@ -74,11 +79,6 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
     vim.cmd("normal! zx")
   end,
 })
-
--- =========================
--- Colorscheme
--- =========================
-vim.cmd.colorscheme("catppuccin-nvim") -- setting a colorscheme
 
 -- =========================
 -- Nice-to-have, but not crazy
