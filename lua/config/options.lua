@@ -4,7 +4,7 @@ local opt = vim.opt
 -- =========================
 -- Colorscheme
 -- =========================
-vim.cmd.colorscheme("catppuccin-nvim") -- setting a colorscheme
+vim.cmd.colorscheme("onedark") -- setting a colorscheme
 
 -- =========================
 -- Basics / UI
